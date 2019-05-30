@@ -1,18 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <sys/types.h>
-#include <sys/time.h>
-#include <arpa/inet.h>
-#include <unistd.h>
-
-typedef struct pacote{
-    char numSeq;
-    char ack;
-    char* dados;
-}pkg;
+#include "gbn.h"
 
 void serialize(char* b, pkg* p, int t){
     if (t == 0){
