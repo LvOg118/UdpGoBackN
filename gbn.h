@@ -16,7 +16,8 @@ typedef struct {
 	uint8_t  type;            // Tipo do pacote
 	uint8_t  seqnum;          // Numero de sequencia do pacote
     uint16_t checksum;        // Soma de verificação
-    uint8_t data[DATALEN];    // Ponteiro para os dados
+    uint8_t* data;    // Ponteiro para os dados
 }pkg;
 
+void serialize(char* buffer, pkg* package, int typeOfConversion); // função de serialização do pacote
 uint16_t checksum (pkg* pacote);   // Soma de verificação
