@@ -12,6 +12,10 @@
 #include <errno.h>
 #include <unistd.h>
 
+#define ACK  0 // define os tipos de pacote
+#define DATA 1
+#define END  2
+
 typedef struct {
 	uint8_t  type;            // Tipo do pacote
 	uint8_t  seqnum;          // Numero de sequencia do pacote

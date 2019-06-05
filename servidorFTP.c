@@ -1,20 +1,6 @@
 #include "gbn.h"
 #include "tp_socket.c"
 
-void serialize(char* b, pkg* p, int t){ // transforma a estrutura pacote em um vetor e vice-versa
-    if (t == 0){
-        b = b + 2;
-        strcpy(b, p->dados);
-        b = b - 2;
-        b[0] = p->numSeq;
-        b[1] = p->ack;
-    }
-    if (t == 1){
-        p->numSeq = b[0];
-        p->ack = b[1];
-    }
-}
-
 int main(int argc, char *argv[ ]){
     if (argc < 3){
         printf("[!] Número de argumentos incompátiveis \n");
